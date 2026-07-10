@@ -23,10 +23,18 @@ func NewGenPass(genPassSvc service.GenPass) GenPass {
 	}
 }
 
+
+//GeneratePassword godoc 
+//@Summary Generate a random password 
+//@Tags password 
+//@Produce json
+//Success 200 {string} string
+//@Router /genpass [get]
 func (s *genPassHandler) GeneratePassword (c *gin.Context){
 	pass , err := s.genPassService.GeneratePassword(passwordlength)
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "Internal Server Err"})
+		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"password": pass})

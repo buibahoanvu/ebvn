@@ -1,0 +1,16 @@
+basePath: /
+info:
+  contact: {}
+  description: API for managing bookmarks
+  title: Bookmark Management API
+  version: 1.0.0
+paths:
+  /genpass:
+    get:
+      produces:
+      - application/json
+      responses: {}
+      summary: Generate a random password
+      tags:
+      - password
+swagger: "2.0"

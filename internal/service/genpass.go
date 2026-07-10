@@ -7,11 +7,13 @@ import (
 
 const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
+ //chay  mockey --name GenPass --filename genpass.go
 type GenPass interface {
 	GeneratePassword(length int) (string, error)
 }
 type genPassService struct {
 }
+
 
 func NewGenPass() GenPass {
 	return &genPassService{}
